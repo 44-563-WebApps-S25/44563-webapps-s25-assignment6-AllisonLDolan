@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>City</title>
+    <link rel="stylesheet" href="format.css">
 </head>
 <body>
 
@@ -28,6 +29,10 @@
     <input type="button" onclick="resolveForm()" value="Get values from form">
 </form>
 <p id="result2">This text will be replaced </p>
+
+<div class = "container-img">
+    <img src="Dog.jpg" id="Image" class="img-fluid" alt="Dog" onclick="updatePic()">
+</div>
 
 <script> 
 
@@ -62,6 +67,28 @@ function checkCity (){
         out.innerHTML = "Awe"
     }
 
+}
+let usePic = 1
+function updatePic(){
+    let img = document.getElementById("Image");
+    switch (usePic) {
+        case 1:
+            usePic = 2
+            img.src = "Lemur.jpg";
+            break
+        case 2:
+            usePic = 3
+            img.src = "Snake.jpg";
+            break
+        case 3: 
+            usePic = 1
+            img.src = "Dog.jpg";
+            break
+        default:
+            usePic = 1
+            img.src = "Dog.jpg";
+            break
+    }
 }
 </script>
 
