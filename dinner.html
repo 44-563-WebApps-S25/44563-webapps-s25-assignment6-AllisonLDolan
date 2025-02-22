@@ -22,9 +22,18 @@
 
     <input type="button" onclick="choices()" value="Dinner Choices">
   </form>
+<p id="my_dinner">This text will be replaced </p>
 
+<form>
+    <input type="text" id="main" name="main" value="Butter Chicken">
+    <label for="main">Enter main dish: </label></br>
+  
+    <input type="text" id="dessert" name="dessert">
+    <label for="dessert">Enter dessert: </label></br>
+  
+    <input type="button" onclick="updateDinner()" value="Update the dinner">
+  </form>
 
-<p id="result">This text will be replaced </p>
 
 <script> 
 
@@ -36,7 +45,15 @@ function choices(){
     my_dinner.outside = document.getElementById("outside").checked
     my_dinner.candles = document.getElementById("candles").checked
 
-    document.getElementById("result").innerHTML = `Wine: ${my_dinner.wine} Outside: ${my_dinner.outside} Candles: ${my_dinner.candles}`
+    document.getElementById("my_dinner").innerHTML = `Wine: ${my_dinner.wine}  Outside: ${my_dinner.outside}  Candles: ${my_dinner.candles}`
+}
+
+function updateDinner(){
+    my_dinner.main = document.getElementById("main").value;
+    my_dinner.dessert = document.getElementById("dessert").value;
+
+    document.getElementById("my_dinner").innerHTML = `Main Dish: ${my_dinner.main}  Dessert: ${my_dinner.dessert}`;
+
 }
 </script>
 
