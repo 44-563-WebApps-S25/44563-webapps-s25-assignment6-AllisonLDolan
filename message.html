@@ -19,13 +19,26 @@
 
     <input type="button" onclick="amounts()" value="Show Total">
 </form>
-
-
 <p id="result">This text will be replaced</p>
+
+<form>
+    <input type="radio" id="product" onclick = chooseOp() name="product" 
+        value="times">
+    <label for="product">Product</label></br>
+
+    <input type="radio" id="sum" onclick = chooseOp() name="sum" 
+        value="add">
+    <label for="sum">Sum</label></br>
+
+    <input type="radio" id="mod" onclick = chooseOp() name="mod"   
+        value="mod">
+    <label for="mod">Mod</label></br>
+</form>
+<p id="result2">This text will be replaced</p>
 
 <script> 
 
-function amounts (){
+function amounts(){
     let basicPrice = parseFloat(document.getElementById("basicPrice").value)
     let breakAt = parseFloat(document.getElementById("breakAt").value)
     let discount = parseFloat(document.getElementById("discount").value)
@@ -45,7 +58,34 @@ function amounts (){
         }
         myResults += `size ${size} is ${total.toFixed(2)}; `
     }
-    out.innerHTML = `Totals are: ` + myResults
+    out.innerHTML = "Totals are: " + myResults
+}
+
+function chooseOp(){
+    product = document.getElementById("product").checked
+    sum = document.getElementById("sum").checked
+    mod = document.getElementById("mod").checked
+
+    let basicPrice = parseFloat(document.getElementById("basicPrice").value)
+    let breakAt = parseFloat(document.getElementById("breakAt").value)
+
+    out2 = document.getElementById("result2")
+
+    let result
+    if(product){
+        result = basicPrice * breakAt
+    }
+    else if(sum){
+        result = basicPrice + breakAt
+    }
+    else if(mod){
+        result = basicPrice % breakAt
+    }
+    else{
+        result = "Invalid operation"
+    }
+    out2.innerHTML = "Results: " + result
+
 }
 </script>
 
