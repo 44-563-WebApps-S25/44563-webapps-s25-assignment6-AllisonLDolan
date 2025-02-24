@@ -13,37 +13,43 @@
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
  </head>
 <body>
+<div class="p-2">
+    <h2 style="color: #0c633a;">Plans Dinner</h2>
+    <div class = "card border-3 border-primary-emphasis rounded-4 p-3" style="background-color: #e1feef;">
+        <form>
+            <div class = "mb-2">
+                <input type="checkbox" id="wine" name="wine"   
+                value="true">
+                <label for="wine">Serve wine</label></br>
+            </div>
 
-<h2>Plans Dinner</h2>
+            <div class = "mb-2">
+                <input type="checkbox" id="outside" name="outside" 
+                value="True">
+                <label for="outside">Eat outside</label></br>
+            </div>
 
-<form>
-    <input type="checkbox" id="wine" name="wine"   
-      value="true">
-    <label for="wine">Serve wine</label></br>
-  
-    <input type="checkbox" id="outside" name="outside" 
-       value="True">
-    <label for="outside">Eat outside</label></br>
-  
-    <input type="checkbox" id="candles" name="candles"   
-       value="False">
-    <label for="candles">Light candles</label></br>
+            <div class = "mb-2">
+                <input type="checkbox" id="candles" name="candles"   
+                value="False">
+                <label for="candles">Light candles</label></br>
+            </div>
+            
+            <input type="button" style="background-color: #0c633a; color: #d6f1e5;" class= "border-2 border-primary-emphasis rounded-3 shadow-sm px-4 text-center" onclick="choices()" value="Dinner Choices">
+        </form>
+        <p id="my_dinner">This text will be replaced </p>
 
-    <input type="button" onclick="choices()" value="Dinner Choices">
-  </form>
-<p id="my_dinner">This text will be replaced </p>
-
-<form>
-    <input type="text" id="main" name="main" value="Butter Chicken">
-    <label for="main">Enter main dish: </label></br>
-  
-    <input type="text" id="dessert" name="dessert">
-    <label for="dessert">Enter dessert: </label></br>
-  
-    <input type="button" onclick="updateDinner()" value="Update the dinner">
-  </form>
-
-
+        <form>
+            <label for="main" class="form-label fw-bold">Enter main dish: </label>
+            <input type="text" id="main" name="main" value="Butter Chicken"></br>
+        
+            <label for="dessert" class="form-label fw-bold">Enter dessert: </label>
+            <input type="text" id="dessert" name="dessert"></br>
+        
+            <input type="button" style="background-color: #0c633a; color: #d6f1e5;" class= "border-2 border-primary-emphasis rounded-3 shadow-sm px-4 text-center" onclick="updateDinner()" value="Update the dinner">
+        </form>
+    </div>
+</div>
 <script> 
 
 function choices(){

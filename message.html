@@ -14,39 +14,39 @@
 </head>
 <body>
 
-<h2>Message Cost</h2>
+<div class="container py-5">
+    <h2>Message Cost</h2>
+    <div class="card shadow-lg border-0 p-4 bg-light">
+        <form>
+            <label for="basicPrice" class="form-label fw-bold">Enter cost per letter </label>
+            <input type ="number" id="basicPrice" name="basicPrice" value=0.50> <br>
 
-<form>
-    <label for="basicPrice">Enter cost per letter </label>
-    <input type ="number" id="basicPrice" name="basicPrice" value=0.50> <br>
+            <label for="breakAt" class="form-label fw-bold">Enter the length needed for the discount </label>
+            <input type ="number" id="breakAt" name="breakAt" value=9> <br>
 
-    <label for="breakAt">Enter the length needed for the discount </label>
-    <input type ="number" id="breakAt" name="breakAt" value=9> <br>
+            <label for="discount" class="form-label fw-bold">Enter the discount percent </label>
+            <input type ="number" id="discount" name="discount" value=10> <br>
 
-    <label for="discount">Enter the discount percent </label>
-    <input type ="number" id="discount" name="discount" value=10> <br>
+            <input type="button" class= "bg-primary-subtle border-2 border-primary-emphasis rounded-3 shadow-sm px-4 text-center" onclick="amounts()" value="Show Total">
+        </form>
+        <p id="result">This text will be replaced</p>
 
-    <div class="text-center">
-        <input type="button"  class="btn btn-lg btn-primary shadow-sm px-4" onclick="amounts()" value="Show Total">
+        <form>
+            <input type="radio" id="product" onclick = chooseOp() name="product" 
+                value="times">
+            <label for="product">Product</label></br>
+
+            <input type="radio" id="sum" onclick = chooseOp() name="sum" 
+                value="add">
+            <label for="sum">Sum</label></br>
+
+            <input type="radio" id="mod" onclick = chooseOp() name="mod"   
+                value="mod">
+            <label for="mod">Mod</label></br>
+        </form>
+        <p id="result2">This text will be replaced</p>
     </div>
-</form>
-<p id="result">This text will be replaced</p>
-
-<form>
-    <input type="radio" id="product" onclick = chooseOp() name="product" 
-        value="times">
-    <label for="product">Product</label></br>
-
-    <input type="radio" id="sum" onclick = chooseOp() name="sum" 
-        value="add">
-    <label for="sum">Sum</label></br>
-
-    <input type="radio" id="mod" onclick = chooseOp() name="mod"   
-        value="mod">
-    <label for="mod">Mod</label></br>
-</form>
-<p id="result2">This text will be replaced</p>
-
+</div>
 <script> 
 
 function amounts(){
