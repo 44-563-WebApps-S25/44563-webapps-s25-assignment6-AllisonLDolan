@@ -15,7 +15,7 @@
     <label for="guess">Guess the city: </label>
     <input type ="text" id="guess" > <br>
 
-    <input type="button" onclick="checkCity()" value="Check the guess">
+    <input type="button" id="button" onclick="checkCity()" value="Check the guess">
 </form>
 <p id="result1">This text will be replaced </p>
 
@@ -23,14 +23,22 @@
     <img src="Dog.jpg" id="Image" class="img-fluid" alt="Dog" onclick="updatePic()">
 </div>
 
+<div class ="results">
+    Correct Guesses: <span id="found">0</span>
+    <br>
+    Wrong Guesses: <span id="oops">0</span>
+</div>
+
 <script> 
+let oops = 0
+let found = 0
 
 function checkCity (){
-    oops = 0
-    found = 0
-
     guess = document.getElementById("guess").value
     where = document.getElementById("where").value
+
+    founds = document.getElementById("found");
+    oopss = document.getElementById("oops");
 
     out = document.getElementById("result1")
     if(guess === where){
@@ -40,6 +48,15 @@ function checkCity (){
     else{
         oops++
         out.innerHTML = "Awe"
+    }
+    
+    founds.textContent = found;
+    oopss.textContent = oops;
+
+    if (oops > 2 * found){
+        document.getElementById("button").onclick = function(){
+            alert("Sorry, too many wrong guesses.")
+        }
     }
 
 }
